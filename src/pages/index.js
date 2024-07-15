@@ -31,7 +31,6 @@ export default function Wallet() {
                 setIsError(false)
                 setStatus('Airdrop successful!');
             } catch (error) {
-                console.log(error)
                 setIsError(true)
                 setStatus('Airdrop failed: ' + error.message);
             }
@@ -47,19 +46,18 @@ export default function Wallet() {
     return (
         <Container>
             <Header title="Wallet">
-
                 <Button onClick={handleCreateWallet}>Create Wallet</Button>
                 <Button onClick={handleAirdrop}>Airdrop 1 SOL</Button>
                 <DataBox>Balance: <div>{balance} SOL </div></DataBox>
             </Header>
             <Box>
-                {wallet && (
+                {wallet ? (
                     <>
                         <DataBox >Address: <div>{wallet.publicKey.toString()}</div></DataBox>
                         <DataBox >Private Key: <div>{JSON.stringify(wallet.secretKey)}</div></DataBox>
                         <Button onClick={() => router.push('/transaction')}>Transaction</Button>
                     </>
-                )}
+                ):null}
                 {status && <Status isError={isError}>{status}</Status>}
             </Box>
         </Container>

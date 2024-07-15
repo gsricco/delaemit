@@ -31,5 +31,9 @@ cd delaemit
 npm install
 npm run dev
 
+При необходимости:
+npm run build 
+npm start
+
 
 

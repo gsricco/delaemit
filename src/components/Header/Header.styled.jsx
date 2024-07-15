@@ -10,7 +10,6 @@ export const HeaderContainer = styled.div`
   padding: 10px;
   background: #28519d;
   border-radius: 5px;
-  border-radius: 5px;
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 
   @media (max-width: 576px) {
